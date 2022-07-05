@@ -5,6 +5,7 @@
 	import NotFound from './routes/notFound.svelte';
 </script>
 
+<!-- main router -->
 <Router>
 	<nav>
 		<Link to="/">Home</Link>
