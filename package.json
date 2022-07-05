@@ -1,8 +1,8 @@
 {
   "scripts": {
-    "start": "node dist/app.js",
-    "dev": "nodemon backend/app.ts",
-    "build": "ts -p ."
+    "serve:client": "cd client && yarn dev",
+    "serve:server": "nodemon backend/app.ts",
+    "dev": "concurrently \"yarn serve:client\" \"yarn serve:server\" "
   },
   "name": "ExpenseTrack",
   "version": "1.0.0",
@@ -20,6 +20,8 @@
     "@types/node": "^18.0.1",
     "@typescript-eslint/eslint-plugin": "^5.30.5",
     "@typescript-eslint/parser": "^5.30.5",
+    "concurrently": "^7.2.2",
+    "degit": "^2.8.4",
     "eslint": ">=5.16.0",
     "eslint-config-google": "^0.14.0",
     "jest": "^28.1.2",
