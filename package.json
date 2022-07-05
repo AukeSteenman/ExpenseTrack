@@ -1,0 +1,29 @@
+{
+  "scripts": {
+    "start": "node dist/app.js",
+    "dev": "nodemon backend/app.ts",
+    "build": "ts -p ."
+  },
+  "name": "ExpenseTrack",
+  "version": "1.0.0",
+  "description": "A app which can track expenses",
+  "main": "index.js",
+  "repository": "https://github.com/AukeSteenman/ExpenseTrack.git",
+  "author": "Auke Steenman",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1",
+    "svelte": "^3.48.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^18.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "eslint": ">=5.16.0",
+    "eslint-config-google": "^0.14.0",
+    "nodemon": "^2.0.18",
+    "ts-node": "^10.8.2",
+    "typescript": "^4.7.4"
+  }
+}
