@@ -9,11 +9,12 @@ class Database {
 	private client!: MongoClient;
 
 	/**
-	 * Opens db connection when database object is created
+	 *
+	 * @return {MongoClient | false}
 	 */
-	constructor() {
-		this.openDbConnection();
-	}
+	public getClient = (): MongoClient | null => {
+		return this.client ? this.client : null;
+	};
 
 	public openDbConnection = async (): Promise<void> => {
 		try {

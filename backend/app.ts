@@ -7,6 +7,11 @@ const database = new Database();
 
 const app: Application = express();
 
+app.use(async (req, res, next) => {
+	database.getClient() ?? (await database.openDbConnection());
+	next();
+});
+
 app.use(bodyParser.json());
 
 app.get(
