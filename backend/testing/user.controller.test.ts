@@ -1,3 +1,14 @@
-describe('Test GameData Match mutations', () => {
-	it('Should be able to connect to the database', () => {});
+import Database from '../database';
+
+let database: Database;
+
+beforeEach(async () => {
+	database = new Database();
+	await database.openDbConnection();
+});
+
+describe('Test database functionallity', () => {
+	it('Should create a client object inside the database object', () => {
+		expect(database.getClient()).toBeTruthy();
+	});
 });
