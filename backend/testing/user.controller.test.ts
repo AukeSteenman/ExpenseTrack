@@ -1,4 +1,4 @@
-import Database from '../Database';
+import Database from '../database';
 
 let database: Database;
 
