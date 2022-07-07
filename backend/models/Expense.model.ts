@@ -19,7 +19,7 @@ class Expense {
 	private collection!: Collection;
 
 	/**
-	 * Populates the Expense instace following the factory pattern
+	 * Populates the Expense instace following the builder pattern
 	 *
 	 * @param {Database}database
 	 * @param {Collection}userCollection

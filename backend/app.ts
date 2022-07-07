@@ -26,7 +26,7 @@ const expressSetup = async () => {
 	}
 };
 
-// Initializes all models on startup following the facotory pattern
+// Initializes all models on startup following the builder pattern
 app.listen(PORT, async () => {
 	await expressSetup();
 	console.log('express server started on port: ' + PORT);
