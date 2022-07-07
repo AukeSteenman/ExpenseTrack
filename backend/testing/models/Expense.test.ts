@@ -1,10 +1,10 @@
-import Database from '../database';
+import ExpenseHandler from '../../models/Expense.model';
 
-let database: Database;
+let expenseHandler: ExpenseHandler;
 
 beforeEach(async () => {
-	database = new Database();
-	await database.openDbConnection();
+	expenseHandler = new ExpenseHandler();
+	await expenseHandler;
 });
 
 describe('Test database functionallity', () => {
