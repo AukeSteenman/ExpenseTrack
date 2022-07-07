@@ -11,8 +11,9 @@
 	},
 	"plugins": ["@typescript-eslint"],
 	"rules": {
+		"error": { "newIsCap": true },
 		"comma-dangle": ["error", "never"],
-		"max-len": ["error", { "code": 100 }],
+		"max-len": ["error", { "code": 200 }],
 		"indent": ["error", "tab"],
 		"no-tabs": 0,
 		"linebreak-style": 0,
