@@ -1,31 +1,33 @@
-import express, { Application, Request, Response, NextFunction } from 'express';
-import Database from './database';
+import express, { Application } from 'express';
+import Database from './Database';
 import bodyParser from 'body-parser';
+import Expense from './models/Expense.model';
 
 const PORT = 3001;
-const database = new Database();
+
+// eslint-disable-next-line new-cap
 
 const app: Application = express();
+const router = express.Router();
 
-app.use(async (req, res, next) => {
-	database.getClient() ?? (await database.openDbConnection());
-	next();
-});
-
+app.use('/api', router);
 app.use(bodyParser.json());
 
-app.get(
-	'/api/users',
-	async (req: Request, res: Response, next: NextFunction) => {
-		const collection = await database.getCollection('users');
-		await collection.find({}).toArray((err: any, docs: any) => {
-			if (err) {
-				res.status(400).send('Cannot get users. \n err: "' + err + '"');
-			} else {
-				res.json(docs);
-			}
-		});
-	}
-);
+const expressSetup = async () => {
+	//setup db
+	const db = new Database();
+	await db.setup('users');
 
-app.listen(PORT, () => console.log('Express server started'));
+	//Expenses
+	const collection = db.getCollection('users');
+	if (collection) {
+		let expenseModel = new Expense(db, collection);
+		router.get('/users', expenseModel.addExpense);
+	}
+};
+
+// Initializes all models on startup following the facotory pattern
+app.listen(PORT, async () => {
+	await expressSetup();
+	console.log('express server started on port: ' + PORT);
+});
