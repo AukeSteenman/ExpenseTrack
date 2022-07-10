@@ -10,7 +10,6 @@
 	"name": "ExpenseTrack",
 	"version": "1.0.0",
 	"description": "A app which can track expenses",
-	"main": "index.js",
 	"repository": "https://github.com/AukeSteenman/ExpenseTrack.git",
 	"author": "Auke Steenman",
 	"license": "MIT",
