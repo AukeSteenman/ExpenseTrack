@@ -8,41 +8,65 @@
 
 <!-- Router -->
 <Router>
-	<nav>
-		<Link to="/">Home</Link>
-		<Link to="about">About</Link>
-		<Link to="dashboard">Dashboard</Link>
-	</nav>
-	<div class="content-container">
-		<Route path="/">
-			<Home />
-		</Route>
-		<Route path="/about">
-			<About />
-		</Route>
-		<Route path="/dashboard">
-			<Dashboard />
-		</Route>
-		<Route path="">
-			<NotFound />
-		</Route>
-	</div>
+	<section class="wrapper">
+		<nav>
+			<p class="nav-title">Doekoe Checker</p>
+			<div class="nav-links">
+				<Link to="/">Home</Link>
+				<Link to="about">About</Link>
+				<Link to="dashboard">Dashboard</Link>
+			</div>
+		</nav>
+		<div class="content">
+			<Route path="/">
+				<Home />
+			</Route>
+			<Route path="/about">
+				<About />
+			</Route>
+			<Route path="/dashboard">
+				<Dashboard />
+			</Route>
+			<Route path="">
+				<NotFound />
+			</Route>
+		</div>
+	</section>
 </Router>
 
-<style lang="css">
-	:root {
-		--primary: #e7ffeb;
-		--secondary: #d1e8d5;
-		--nav-bar-height: 5vh;
+<style lang="scss">
+	@import './assets/styles/main.style';
+	.wrapper {
+		color: $primary-text-color;
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
 	}
-	.content-container {
+	.content {
+		padding: 0.5rem;
+		flex-grow: 1;
+		font-family: $secondary-font;
 		margin: 0;
 		width: 100vw;
-		height: calc(100vh - var(--nav-bar-height));
-		background-color: var(--primary);
+		background-color: $primary;
 	}
+	.primary-text {
+		font-family: $primary-font;
+	}
+
 	nav {
-		height: var(--nav-bar-height);
-		background-color: var(--primary);
+		padding: 0.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: auto;
+		background-color: $secondary;
+		.nav-title {
+			font-family: $primary-font;
+			font-size: 4rem;
+		}
+		.nav-links {
+			align-items: center;
+		}
 	}
 </style>

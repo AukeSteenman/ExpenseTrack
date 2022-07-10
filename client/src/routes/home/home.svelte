@@ -1,7 +1,10 @@
 <script lang="ts">
 </script>
 
-<section>lol</section>
+<section>
+	<p class="text">Dit is een test</p>
+</section>
 
-<style lang="css">
+<style lang="scss">
+	@import '../../assets/styles/main.style';
 </style>
